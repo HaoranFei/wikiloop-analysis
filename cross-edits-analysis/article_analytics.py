@@ -55,8 +55,8 @@ def main(argv):
         non_zero_articles = group.loc[group["ores_damaging"] != 0].copy()
         non_zero_count = non_zero_articles.shape[0]
         if non_zero_count != 0:
-            articles_with_non_zero_scores.append(article)
-            for column in columns_to_count:
+            articles_with_non_zero_scores.append(group)
+            for column in columns:
                 means[column].append(non_zero_articles[column].mean())
                 medians[column].append(non_zero_articles[column].median())
 
